@@ -60,17 +60,6 @@
     display: grid; grid-template-columns: 1.1fr 0.9fr;
     gap: 4rem; align-items: center;
   }
-  .hero-status {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--sage-light); border-radius: 100px;
-    padding: 0.4rem 1rem; margin-bottom: 1.75rem;
-    font-size: 0.75rem; font-weight: 500; color: #3d6b5c; letter-spacing: 0.04em;
-  }
-  .hero-status-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: var(--sage); animation: pulse 2s infinite;
-  }
-  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
   .hero h1 {
     font-family: 'Lora', serif;
     font-size: clamp(2.2rem, 3.5vw, 3.2rem);
@@ -109,7 +98,7 @@
   .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em; color: var(--terracotta); text-transform: uppercase; margin-bottom: 0.75rem; }
   .section-title { font-family: 'Lora', serif; font-size: clamp(1.8rem, 3vw, 2.5rem); letter-spacing: -0.02em; color: var(--ink); margin-bottom: 3rem; line-height: 1.2; }
 
-  /* NEW SLEEK EXPERIENCE LAYOUT */
+  /* EXPERIENCE TIMELINE */
   .exp-timeline { display: flex; flex-direction: column; }
   .exp-row { 
     display: grid; grid-template-columns: 220px 1fr; gap: 2.5rem; 
@@ -123,19 +112,31 @@
   .exp-company img { width: 24px; height: 24px; object-fit: contain; }
   .exp-location { font-size: 0.8rem; color: var(--ink-soft); }
   .exp-role { font-family: 'Lora', serif; font-size: 1.3rem; color: var(--ink); margin-bottom: 1rem; }
-  .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
-  .exp-bullets li { font-size: 0.95rem; color: var(--ink-mid); padding-left: 1.2rem; position: relative; }
-  .exp-bullets li::before { content: '→'; position: absolute; left: 0; top: 0; color: var(--terracotta); font-weight: 600; }
+  
+  /* CLEAN BULLETS & MEASURABLE OUTCOMES */
+  .exp-bullets { list-style: disc; padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .exp-bullets li { font-size: 0.95rem; color: var(--ink-mid); }
   .exp-bullets li strong { color: var(--ink); font-weight: 600; }
+  
+  .measurable-outcomes { 
+    background: var(--sage-light); 
+    padding: 1.25rem 1.5rem; 
+    border-radius: 0.75rem; 
+    margin-top: 1.5rem; 
+    border-left: 4px solid var(--sage); 
+  }
+  .measurable-outcomes h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: #3d6b5c; margin-bottom: 0.5rem; font-weight: 700; }
+  .measurable-outcomes ul { list-style: circle; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.4rem; }
+  .measurable-outcomes li { font-size: 0.9rem; color: var(--ink-mid); }
 
   /* ADDITIONAL EXPERIENCE COMPACT LIST */
   .additional-exp { background: var(--warm-white); border-radius: 1.5rem; padding: 2.5rem; border: 1px solid var(--border); margin-top: 2rem; }
   .additional-exp h3 { font-size: 1rem; color: var(--ink); margin-bottom: 1.5rem; font-weight: 600; }
-  .compact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+  .compact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
   .compact-item { font-size: 0.85rem; color: var(--ink-soft); padding-left: 1rem; border-left: 2px solid var(--sand); }
   .compact-item strong { color: var(--ink); display: block; font-size: 0.9rem; margin-bottom: 0.1rem; }
 
-  /* PROJECTS & EDUCATION (Restored from previous) */
+  /* PROJECTS */
   .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .proj-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: 1.25rem; padding: 2rem; transition: all 0.25s; position: relative; overflow: hidden; }
   .proj-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--terracotta); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
@@ -143,10 +144,13 @@
   .proj-card:hover { box-shadow: 0 12px 32px var(--shadow); transform: translateY(-2px); }
   .proj-tag-row { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; }
   .proj-tag { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.05em; padding: 0.25rem 0.6rem; border-radius: 100px; background: var(--sand); color: var(--ink-soft); }
+  .proj-tag.ai { background: var(--terracotta-light); color: var(--terracotta-dark); }
+  .proj-tag.nlp { background: var(--sage-light); color: #3d6b5c; }
   .proj-title { font-family: 'Lora', serif; font-size: 1.15rem; color: var(--ink); margin-bottom: 0.6rem; letter-spacing: -0.02em; }
   .proj-org { font-size: 0.75rem; color: var(--terracotta); font-weight: 600; letter-spacing: 0.04em; margin-bottom: 0.75rem; }
   .proj-desc { font-size: 0.85rem; color: var(--ink-soft); }
 
+  /* EDUCATION */
   .edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
   .edu-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: 1.25rem; padding: 2rem; display: flex; gap: 1.25rem; align-items: flex-start; transition: all 0.25s; }
   .edu-card:hover { box-shadow: 0 12px 32px var(--shadow); transform: translateY(-2px); }
@@ -169,12 +173,6 @@
   .fun-icon { font-size: 1.5rem; background: var(--sand); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 12px; flex-shrink: 0; }
   .fun-text strong { display: block; color: var(--ink); font-size: 0.95rem; margin-bottom: 0.2rem; }
   .fun-text span { color: var(--ink-soft); font-size: 0.85rem; }
-
-  /* SKILLS */
-  .skills-wrap { display: flex; flex-wrap: wrap; gap: 0.6rem; }
-  .skill-pill { padding: 0.5rem 1.1rem; border-radius: 100px; border: 1px solid var(--border); font-size: 0.8rem; font-weight: 500; color: var(--ink-mid); background: var(--warm-white); transition: all 0.2s; }
-  .skill-pill:hover { background: var(--terracotta-light); border-color: var(--terracotta); color: var(--terracotta-dark); }
-  .skill-pill.core { background: var(--terracotta-light); border-color: transparent; color: var(--terracotta-dark); }
 
   /* CONTACT */
   .contact-wrap { background: var(--ink); border-radius: 2rem; padding: 4rem; color: var(--cream); text-align: center; }
@@ -220,11 +218,7 @@
 
 <section class="hero" id="about">
   <div class="hero-text">
-    <div class="hero-status">
-      <div class="hero-status-dot"></div>
-      Fort Worth, TX · Open to roles
-    </div>
-    <h1>I'm a Data Scientist who thinks like an <em>engineer.</em></h1>
+    <h1>Data Scientist with an engineering mindset—focused on <em>scalable, deployable ML.</em></h1>
     <p class="hero-sub">I don't just build models, I own what happens after they ship. My background spans biosystems engineering, financial ML at scale, and production AI for global digital health products. That range isn't accidental — I've always been drawn to problems that sit at the intersection of technical depth and real business impact.</p>
     <p class="hero-sub">At every role I've been in, I've pushed beyond the brief. At Pfizer, I didn't just execute; I redesigned how the team documented vendor decisions from scratch. At Alcon, I'm not just running pipelines; I'm shaping how AI gets evaluated, deployed, and measured against outcomes that actually matter. I care about building things end to end. From architecture to CI/CD to whether it moves a metric.</p>
     <div class="hero-btns">
@@ -254,11 +248,17 @@
       <div>
         <div class="exp-role">Data Scientist — Digital Health MLOps</div>
         <ul class="exp-bullets">
-          <li>Built and deployed <strong>conversational AI systems</strong> for global digital health platforms using serverless AWS architecture, serving <strong>500K+ users</strong> with privacy-aware infrastructure.</li>
-          <li>Designed <strong>RAG-based semantic retrieval pipelines</strong> integrating structured and unstructured healthcare data to power AI chatbots across multiple products.</li>
-          <li>Built experimentation frameworks (A/B testing, causal inference, statistical validation) that improved <strong>user engagement by 20%</strong>.</li>
-          <li>Implemented end-to-end MLOps pipelines with MLflow, Spark, and GitHub Actions — model tracking, LLM-as-a-judge evaluation, and reproducible CI/CD releases.</li>
+          <li>Spearheaded <strong>Generative AI</strong> initiatives, architecting conversational agents and RAG-based semantic retrieval pipelines for global digital health platforms using serverless AWS infrastructure.</li>
+          <li>Designed and executed robust <strong>A/B testing and causal inference frameworks</strong> to rigorously evaluate model performance and user behavior against core business objectives.</li>
+          <li>Streamlined end-to-end MLOps pipelines utilizing MLflow, Apache Spark, and GitHub Actions for automated model tracking, LLM-as-a-judge evaluation, and reliable CI/CD deployments.</li>
         </ul>
+        <div class="measurable-outcomes">
+          <h4>Measurable Outcomes</h4>
+          <ul>
+            <li>Served <strong>500K+ users</strong> globally with highly available, privacy-aware AI architecture.</li>
+            <li>Drove a <strong>20% lift in user engagement</strong> through statistically validated product experimentation.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -271,10 +271,16 @@
       <div>
         <div class="exp-role">Data Scientist</div>
         <ul class="exp-bullets">
-          <li>Built end-to-end analytics pipelines using Apache Spark and SQL to preprocess <strong>100M+ time series and text records</strong>, reducing ETL runtime by <strong>30%</strong>.</li>
-          <li>Implemented <strong>HDBSCAN clustering</strong> for anomaly detection on system metrics, surfacing risk signals that rule-based monitoring couldn't catch.</li>
-          <li>Partnered with compliance teams to define safety thresholds and stress-test AI systems against adversarial and edge cases before deployment.</li>
+          <li>Developed scalable analytics pipelines in Apache Spark and SQL to process massive volumes of time series and unstructured text data.</li>
+          <li>Deployed <strong>HDBSCAN clustering algorithms</strong> for proactive anomaly detection on system metrics, uncovering hidden risk signals missed by traditional rule-based engines.</li>
+          <li>Collaborated closely with risk and compliance teams to establish safety thresholds and stress-test machine learning systems against adversarial edge cases.</li>
         </ul>
+        <div class="measurable-outcomes">
+          <h4>Measurable Outcomes</h4>
+          <ul>
+            <li>Successfully preprocessed over <strong>100M+ records</strong> efficiently, reducing overall ETL pipeline runtime by <strong>30%</strong>.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
@@ -287,9 +293,15 @@
       <div>
         <div class="exp-role">Project Engineer</div>
         <ul class="exp-bullets">
-          <li>Identified a gap in vendor evaluation documentation and independently designed an <strong>end-to-end RFP tracking framework</strong> from scratch, standardizing evaluation across <strong>10+ vendors</strong>.</li>
-          <li>Built financial models and dashboards to forecast Revenue Cycle Management performance, supporting risk assessment and strategic planning at scale.</li>
+          <li>Identified critical gaps in vendor evaluation processes and engineered a comprehensive, data-driven RFP tracking framework from the ground up.</li>
+          <li>Developed scalable financial forecasting models and dynamic Tableau dashboards to analyze Revenue Cycle Management performance.</li>
         </ul>
+        <div class="measurable-outcomes">
+          <h4>Measurable Outcomes</h4>
+          <ul>
+            <li>Standardized and streamlined the technical and financial evaluation metrics across <strong>10+ major enterprise vendors</strong>.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -303,6 +315,7 @@
       <div class="compact-item"><strong>Product Manager</strong>Startupparty</div>
       <div class="compact-item"><strong>Graphic Web Designer</strong>Leonard Gelfand Center (CMU)</div>
       <div class="compact-item"><strong>Graduate Teaching Assistant</strong>Calculus 2</div>
+      <div class="compact-item"><strong>Tutor</strong>PLUStutor</div>
       <div class="compact-item"><strong>Extern</strong>AT&T</div>
       <div class="compact-item"><strong>Junior Staffer</strong>MSUMUN</div>
     </div>
@@ -315,6 +328,7 @@
   <div class="section-label">What I've built</div>
   <h2 class="section-title">Projects</h2>
   <div class="proj-grid">
+    
     <div class="proj-card">
       <div class="proj-tag-row">
         <span class="proj-tag ai">LLM</span>
@@ -322,8 +336,19 @@
         <span class="proj-tag">Sentiment Analysis</span>
       </div>
       <div class="proj-org">NVIDIA · Jan–May 2025</div>
-      <div class="proj-title">Social Listening for AI Trends</div>
-      <p class="proj-desc">Built an end-to-end NLP pipeline ingesting social media and industry data to track sentiment and emerging trends across generative, physical, and industrial AI for Nvidia's verticals. Applied transformer-based sentiment analysis and BERTopic topic modeling.</p>
+      <div class="proj-title">Social Listening for Physical AI</div>
+      <p class="proj-desc">Acted as a Data Analyst to build an end-to-end NLP pipeline tracking social media sentiment and industry trends focused specifically on physical and industrial AI. Leveraged transformer models and BERTopic for topic modeling, delivering actionable insights via Streamlit dashboards.</p>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-tag-row">
+        <span class="proj-tag ai">GenAI</span>
+        <span class="proj-tag">Streamlit</span>
+        <span class="proj-tag">Recommendation System</span>
+      </div>
+      <div class="proj-org">TartanHacks · 2025</div>
+      <div class="proj-title">Closet Coordinator</div>
+      <p class="proj-desc">Developed an attribute-based fashion recommendation app using Streamlit. Features a digital wardrobe browser and an AI-powered outfit recommender that instantly suggests matching bottoms for selected tops based on advanced color theory and style attributes.</p>
     </div>
 
     <div class="proj-card">
@@ -336,6 +361,17 @@
       <div class="proj-title">Thesis Mapper: Semantic Discovery</div>
       <p class="proj-desc">Designed and deployed an AI-powered semantic search and clustering system using BERT-based Sentence Transformers and FAISS to map relationships across hundreds of academic theses. Showcased at CMU's Love Data Week.</p>
     </div>
+
+    <div class="proj-card">
+      <div class="proj-tag-row">
+        <span class="proj-tag">Data Modeling</span>
+        <span class="proj-tag">Process Optimization</span>
+      </div>
+      <div class="proj-org">Perrigo Pharma</div>
+      <div class="proj-title">Line Speed Optimization</div>
+      <p class="proj-desc">Analyzed complex manufacturing telemetry to identify production bottlenecks and optimize assembly line efficiency. Built data models to simulate process adjustments, delivering actionable recommendations to increase throughput without compromising quality.</p>
+    </div>
+
   </div>
 </section>
 

@@ -162,6 +162,14 @@ nav.scrolled{background:rgba(247,244,238,0.94);backdrop-filter:blur(20px);box-sh
 .edu-icon{width:52px;height:52px;flex-shrink:0;border-radius:12px;background:var(--sage-light);display:flex;align-items:center;justify-content:center;font-size:1.5rem;position:relative;overflow:hidden;}
 .edu-icon::after{content:'';position:absolute;width:140%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.45),transparent);top:0;left:-140%;transition:left 0.55s ease;}
 .edu-card:hover .edu-icon::after{left:140%;}
+
+/* The new logo sizing rule */
+.school-logo {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+}
+
 .edu-degree{font-weight:600;font-size:0.9rem;color:var(--ink);margin-bottom:0.18rem;}
 .edu-school{font-size:0.79rem;color:var(--red);font-weight:600;margin-bottom:0.14rem;}
 .edu-years{font-size:0.71rem;color:var(--ink3);}
